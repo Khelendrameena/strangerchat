@@ -1,0 +1,1 @@
+{"dependencies":{"cors":"^2.8.5","express":"^4.18.2","socket.io":"^4.7.2"},"main":"index.js","name":"strangerchat-server","scripts":{"start":"node index.js"},"version":"1.0.0"}
