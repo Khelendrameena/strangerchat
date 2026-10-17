@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import "./index.css";
 
-const SERVER = import.meta.env.VITE_API_URL || "http://localhost:3001";
+const SERVER = import.meta.env.VITE_API_URL || "https://strangerchat-server.onrender.com";
 
 const STRANGER_EMOJIS = ["🦊", "🐼", "🦁", "🐯", "🦄", "🐸", "🐙", "🦋", "🐝", "🦜"];
 const QUICK_EMOJIS = ["😂", "❤️", "👍", "😮", "🔥", "👋"];
