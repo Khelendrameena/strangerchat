@@ -41,6 +41,7 @@ export default function App() {
   const [online, setOnline] = useState(0);
   const [chatTime, setChatTime] = useState(0);
   const [showEmoji, setShowEmoji] = useState(false);
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
   const socketRef = useRef(null);
   const bottomRef = useRef(null);
   const typingTimeout = useRef(null);
@@ -122,9 +123,23 @@ export default function App() {
           </p>
 
           <button onClick={start}
-            className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-10 py-4 rounded-xl text-lg transition shadow-lg shadow-indigo-600/25 active:scale-[0.99]">
+            disabled={!ageConfirmed}
+            className="w-full bg-indigo-600 hover:bg-indigo-500 disabled:bg-zinc-800 disabled:text-zinc-500 disabled:cursor-not-allowed disabled:shadow-none text-white font-semibold px-10 py-4 rounded-xl text-lg transition shadow-lg shadow-indigo-600/25 active:scale-[0.99]">
             Start Chatting
           </button>
+
+          <label className="mt-5 flex items-start gap-3 cursor-pointer select-none max-w-md">
+            <input
+              type="checkbox"
+              checked={ageConfirmed}
+              onChange={(e) => setAgeConfirmed(e.target.checked)}
+              className="mt-1 w-4 h-4 rounded accent-indigo-600 cursor-pointer"
+            />
+            <span className="text-zinc-400 text-sm leading-relaxed">
+              I confirm that I am <span className="text-zinc-200 font-semibold">18 years or older</span> and
+              I agree to behave respectfully. StrangerChat is for adults only.
+            </span>
+          </label>
 
           <div className="mt-6 flex items-center gap-2.5">
             <span className="relative flex h-2 w-2">
